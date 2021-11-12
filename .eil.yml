@@ -7,7 +7,7 @@ components:
     groups: []
     code_owners:
       - name: UncleRus
-    depneds:
+    depends:
       - name: lib8tion
     thread_safe: N/A
     targets:
