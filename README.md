@@ -1,5 +1,9 @@
 # esp-idf-lib/color
 
+[![Build examples](https://github.com/esp-idf-lib/color/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/color/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/color/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/color/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/color/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/color/actions/workflows//validate-component.yml)
+
 Common library for RGB and HSV colors.
 
 * [Documentation](https://esp-idf-lib.github.io/color/)
@@ -11,7 +15,7 @@ Common library for RGB and HSV colors.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/color^1.0.0
+idf.py add-dependency esp-idf-lib/color
 ```
 
 ## Support
