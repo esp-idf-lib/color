@@ -1,7 +1,7 @@
 ---
 name: color
 description: Common library for RGB and HSV colors
-version: 1.0.3
+version: 1.0.4
 groups:
   - common
 code_owners:
