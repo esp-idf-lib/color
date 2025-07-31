@@ -174,16 +174,16 @@ void rgb_fill_solid_rgb(rgb_t *target, rgb_t color, size_t num);
  * always what is wanted.
  */
 void hsv_fill_gradient_hsv(hsv_t *target, size_t startpos, hsv_t startcolor, size_t endpos, hsv_t endcolor,
-        color_gradient_direction_t direction);
+                           color_gradient_direction_t direction);
 
 static inline void hsv_fill_gradient2_hsv(hsv_t *target, size_t num, hsv_t c1, hsv_t c2,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     hsv_fill_gradient_hsv(target, 0, c1, num - 1, c2, direction);
 }
 
 static inline void hsv_fill_gradient3_hsv(hsv_t *target, size_t num, hsv_t c1, hsv_t c2, hsv_t c3,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     size_t half = num / 2;
     hsv_fill_gradient_hsv(target, 0,    c1, half,    c2, direction);
@@ -191,7 +191,7 @@ static inline void hsv_fill_gradient3_hsv(hsv_t *target, size_t num, hsv_t c1, h
 }
 
 static inline void hsv_fill_gradient4_hsv(hsv_t *target, size_t num, hsv_t c1, hsv_t c2, hsv_t c3, hsv_t c4,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     size_t onethird = num / 3;
     size_t twothirds = num * 2 / 3;
@@ -207,16 +207,16 @@ static inline void hsv_fill_gradient4_hsv(hsv_t *target, size_t num, hsv_t c1, h
  * converted to RGB as they're written into the RGB array.
  */
 void rgb_fill_gradient_hsv(rgb_t *target, size_t startpos, hsv_t startcolor, size_t endpos, hsv_t endcolor,
-        color_gradient_direction_t direction);
+                           color_gradient_direction_t direction);
 
 static inline void rgb_fill_gradient2_hsv(rgb_t *target, size_t num, hsv_t c1, hsv_t c2,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     rgb_fill_gradient_hsv(target, 0, c1, num - 1, c2, direction);
 }
 
 static inline void rgb_fill_gradient3_hsv(rgb_t *target, size_t num, hsv_t c1, hsv_t c2, hsv_t c3,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     size_t half = num / 2;
     rgb_fill_gradient_hsv(target, 0,    c1, half,    c2, direction);
@@ -224,7 +224,7 @@ static inline void rgb_fill_gradient3_hsv(rgb_t *target, size_t num, hsv_t c1, h
 }
 
 static inline void rgb_fill_gradient4_hsv(rgb_t *target, size_t num, hsv_t c1, hsv_t c2, hsv_t c3, hsv_t c4,
-        color_gradient_direction_t direction)
+                                          color_gradient_direction_t direction)
 {
     size_t onethird = num / 3;
     size_t twothirds = num * 2 / 3;

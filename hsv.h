@@ -63,16 +63,19 @@ typedef enum
 /// HSV color representation
 typedef struct
 {
-    union {
+    union
+    {
         uint8_t h;
         uint8_t hue;
     };
-    union {
+    union
+    {
         uint8_t s;
         uint8_t sat;
         uint8_t saturation;
     };
-    union {
+    union
+    {
         uint8_t v;
         uint8_t val;
         uint8_t value;
@@ -88,7 +91,8 @@ static inline bool hsv_is_zero(hsv_t a)
 /// Create HSV color from values
 static inline hsv_t hsv_from_values(uint8_t h, uint8_t s, uint8_t v)
 {
-    hsv_t res = {
+    hsv_t res =
+    {
         .h = h,
         .s = s,
         .v = v

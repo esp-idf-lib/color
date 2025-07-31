@@ -387,8 +387,9 @@ hsv_t rgb2hsv_approximate(rgb_t rgb)
     if ((r + g + b) == 0)
     {
         // we pick hue zero for no special reason
-        hsv_t res = {
-           .h = 0, .s = 0, .v = 255 - s
+        hsv_t res =
+        {
+            .h = 0, .s = 0, .v = 255 - s
         };
         return res;
     }
@@ -399,9 +400,9 @@ hsv_t rgb2hsv_approximate(rgb_t rgb)
         if (s == 0)
             s = 1;
         uint32_t scaleup = 65535 / (s);
-        r = ((uint32_t) (r) * scaleup) / 256;
-        g = ((uint32_t) (g) * scaleup) / 256;
-        b = ((uint32_t) (b) * scaleup) / 256;
+        r = ((uint32_t)(r) * scaleup) / 256;
+        g = ((uint32_t)(g) * scaleup) / 256;
+        b = ((uint32_t)(b) * scaleup) / 256;
     }
 
     uint16_t total = r + g + b;
@@ -412,9 +413,9 @@ hsv_t rgb2hsv_approximate(rgb_t rgb)
         if (total == 0)
             total = 1;
         uint32_t scaleup = 65535 / (total);
-        r = ((uint32_t) (r) * scaleup) / 256;
-        g = ((uint32_t) (g) * scaleup) / 256;
-        b = ((uint32_t) (b) * scaleup) / 256;
+        r = ((uint32_t)(r) * scaleup) / 256;
+        g = ((uint32_t)(g) * scaleup) / 256;
+        b = ((uint32_t)(b) * scaleup) / 256;
     }
 
     if (total > 255)
@@ -593,7 +594,7 @@ void rgb_fill_solid_rgb(rgb_t *target, rgb_t color, size_t num)
 }
 
 void hsv_fill_gradient_hsv(hsv_t *target, size_t startpos, hsv_t startcolor, size_t endpos, hsv_t endcolor,
-        color_gradient_direction_t direction)
+                           color_gradient_direction_t direction)
 {
     // if the points are in the wrong order, straighten them
     if (endpos < startpos)
@@ -649,7 +650,7 @@ void hsv_fill_gradient_hsv(hsv_t *target, size_t startpos, hsv_t startcolor, siz
     }
     else /* direction == BACKWARD_HUES */
     {
-        huedistance87 = (uint8_t) (256 - huedelta8) << 7;
+        huedistance87 = (uint8_t)(256 - huedelta8) << 7;
         huedistance87 = -huedistance87;
     }
 
@@ -679,7 +680,7 @@ void hsv_fill_gradient_hsv(hsv_t *target, size_t startpos, hsv_t startcolor, siz
 }
 
 void rgb_fill_gradient_hsv(rgb_t *target, size_t startpos, hsv_t startcolor, size_t endpos, hsv_t endcolor,
-        color_gradient_direction_t direction)
+                           color_gradient_direction_t direction)
 {
     // if the points are in the wrong order, straighten them
     if (endpos < startpos)
@@ -735,7 +736,7 @@ void rgb_fill_gradient_hsv(rgb_t *target, size_t startpos, hsv_t startcolor, siz
     }
     else /* direction == BACKWARD_HUES */
     {
-        huedistance87 = (uint8_t) (256 - huedelta8) << 7;
+        huedistance87 = (uint8_t)(256 - huedelta8) << 7;
         huedistance87 = -huedistance87;
     }
 
@@ -866,7 +867,7 @@ hsv_t color_from_palette_hsv(const hsv_t *palette, uint8_t pal_size, uint8_t ind
         sat1 += sat2;
         val1 += val2;
 
-        uint8_t delta_hue = (uint8_t) (hue2 - hue1);
+        uint8_t delta_hue = (uint8_t)(hue2 - hue1);
         if (delta_hue & 0x80)
             // go backwards
             hue1 -= scale8(256 - delta_hue, f2);
@@ -1083,7 +1084,8 @@ uint8_t apply_gamma2brightness(uint8_t brightness, float gamma)
 
 rgb_t apply_gamma2rgb(rgb_t c, float gamma)
 {
-    rgb_t res = {
+    rgb_t res =
+    {
         .r = apply_gamma2brightness(c.r, gamma),
         .g = apply_gamma2brightness(c.g, gamma),
         .b = apply_gamma2brightness(c.b, gamma),
@@ -1093,7 +1095,8 @@ rgb_t apply_gamma2rgb(rgb_t c, float gamma)
 
 rgb_t apply_gamma2rgb_channels(rgb_t c, float gamma_r, float gamma_g, float gamma_b)
 {
-    rgb_t res = {
+    rgb_t res =
+    {
         .r = apply_gamma2brightness(c.r, gamma_r),
         .g = apply_gamma2brightness(c.g, gamma_g),
         .b = apply_gamma2brightness(c.b, gamma_b),
