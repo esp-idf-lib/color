@@ -1,16 +1,7 @@
 ---
-version: 1.0.7
+version: 1.0.8
 description: Common library for RGB and HSV colors
 license: MIT
-targets:
-  - esp32
-  - esp32c3
-  - esp32c5
-  - esp32c6
-  - esp32h2
-  - esp32p4
-  - esp32s2
-  - esp32s3
 dependencies:
   esp-idf-lib/lib8tion:
     version: "*"

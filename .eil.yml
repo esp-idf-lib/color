@@ -1,7 +1,7 @@
 ---
 name: color
 description: Common library for RGB and HSV colors
-version: 1.0.7
+version: 1.0.8
 groups:
   - common
 code_owners:
@@ -9,15 +9,6 @@ code_owners:
 depends:
   - lib8tion
 thread_safe: n/a
-targets:
-  - esp32
-  - esp32s2
-  - esp32c3
-  - esp32s3
-  - esp32c6
-  - esp32h2
-  - esp32p4
-  - esp32c5
 license: MIT
 copyrights:
   - name: FastLED
